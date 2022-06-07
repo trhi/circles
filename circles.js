@@ -30,7 +30,7 @@ class Circle {
 
   clicked(px, py){
     let d = dist(px, py, this.x, this.y);
-    if(d < this.r/15){
+    if(d < this.r/4){
 
       this.dragging = true;
       cursor('pointer');
@@ -76,6 +76,12 @@ class Circle {
     image(this.img, this.x, this.y, this.r, this.r);
   }
 
+}
+
+function touchStarted() {
+  for(let i=0; i<mes.length; i++){
+    mes[i].touched(mouseX, mouseY);
+  }
 }
 
 function mousePressed () {
